@@ -6,6 +6,7 @@ It's Server-Client Project. Server can:
 - receive file from client  
 - send file to client  
 - give information about available files  
+  
 Client can work in two modes:  
 - upload: client uploads all files from described directory to server  
 - download: client downloads all files from server and saves to described folder  
@@ -14,14 +15,17 @@ Client can work in two modes:
 Prerequisites:  
 - installed [git](https://git-scm.com/downloads)  
 - installed [dotnet core](https://dotnet.microsoft.com/download)  
+  
 After clone of repo you will have three projects: `Server`, `Client` and `Shared`.
 - `Shared` describes functions that server has to implement  
 - `Server` implements server functionality: it initializes grpc server using [MagicOnion](https://github.com/Cysharp/MagicOnion) and implements functions described within `Shared`  
 - `Client` implements interaction with server: it can work in download or upload mode. In download mode it downloads files from server. In upload mode it uploads files from described directory to server.  
+  
 `Client` and `Server` can be configured with usage of `appsettings.json` files or with environment variables or with command line arguments.  
 Project was developed with [VS Code](https://code.visualstudio.com/). That's why to debug are used launch configurations from `launch.json`:  
 - `Launch Server` to debug `Server`  
 - `Launch Client` to debug `Client`  
+  
 Each project can be run with command line:  
 ```sh
 dotnet run
