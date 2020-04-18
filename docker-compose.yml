@@ -1,0 +1,26 @@
+version: '3'
+services:
+  server:
+    build:
+      context: .
+      args:
+        project_name: Server
+    image: test-server:1.0
+    container_name: test-server
+    ports:
+      - "12346:12346"
+  client:
+    build: 
+      context: .
+      args:
+        project_name: Client
+    image: test-client:1.0
+    container_name: test-client
+    environment:
+      - DATASHARECLIENT_Mode=upload
+      - DATASHARECLIENT_Host=server
+    volumes:
+      - ./Client/files/upload:/files/upload
+      - ./Client/files/download:/files/download
+    depends_on: 
+      - server
