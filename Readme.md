@@ -16,7 +16,11 @@ Prerequisites:
 - installed [git](https://git-scm.com/downloads)  
 - installed [dotnet core](https://dotnet.microsoft.com/download)  
   
-After clone of repo you will have three projects: `Server`, `Client` and `Shared`.
+Clone repository:  
+```sh
+git clone https://github.com/lexao85/magiconion-test.git
+```
+Solution has three projects: `Server`, `Client` and `Shared`.
 - `Shared` describes functions that server has to implement  
 - `Server` implements server functionality: it initializes grpc server using [MagicOnion](https://github.com/Cysharp/MagicOnion) and implements functions described within `Shared`  
 - `Client` implements interaction with server: it can work in download or upload mode. In download mode it downloads files from server. In upload mode it uploads files from described directory to server.  
