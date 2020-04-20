@@ -1,6 +1,14 @@
 # MagicOnion Test  
 Project to check how [MagicOnion](https://github.com/Cysharp/MagicOnion) can be used to data sharing  
 
+## Contents  
+
+- [How it works](#how-it-works)  
+- [Development](#development)  
+- [Deployment with docker compose](#deployment-with-docker-compose)  
+- [Deployment with docker](#deployment-with-docker)  
+- [Advantages and disadvantages](#advantages-and-disadvantages)  
+
 ## How it works  
 It's Server-Client Project. Server can:  
 - receive file from client  
