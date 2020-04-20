@@ -1,6 +1,14 @@
 # MagicOnion Test  
 Project to check how [MagicOnion](https://github.com/Cysharp/MagicOnion) can be used to data sharing  
 
+## Contents  
+
+- [How it works](#how-it-works)  
+- [Development](#development)  
+- [Deployment with docker compose](#deployment-with-docker-compose)  
+- [Deployment with docker](#deployment-with-docker)  
+- [Advantages and disadvantages](#advantages-and-disadvantages)  
+
 ## How it works  
 It's Server-Client Project. Server can:  
 - receive file from client  
@@ -88,6 +96,7 @@ docker run --env "DATASHARECLIENT_Mode=download" --env "DATASHARECLIENT_Host=$(i
 Advantages:  
 - easy to develop new functionality  
 - easy to deploy  
+  
 Disadvantages:  
 - it would be better to transfer files with chunks  
 - currently files are stored directly to directory. It could be problem especially if server is runned under OS Windows which has some limitations on file names. It would be better to use something like MongoDB GridFS  
