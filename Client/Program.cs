@@ -39,6 +39,8 @@ namespace Client
                 case "DOWNLOAD":
                     var files = await client.GetFilesAsync();
                     Log.Information(@"Files: {files}", string.Join(',', files));
+                    if (!Directory.Exists(downloadDirectory))
+                        Directory.CreateDirectory(downloadDirectory);
                     foreach (var fileName in files)
                     {
                         var bytes = await client.DownloadFileAsync(fileName);
@@ -49,8 +51,15 @@ namespace Client
 
                     break;
                 default:
+                    if (!Directory.Exists(uploadDirectory))
+                    {
+                        Log.Warning(@"Upload directory {uploadDirectory} doesn't exist", uploadDirectory);
+                        break;
+                    }
                     var filesToUpload = Directory
                         .GetFiles(uploadDirectory, "*.*", SearchOption.TopDirectoryOnly);
+                    if (filesToUpload.Length == 0)
+                        Log.Warning("Upload directory is empty => nothing to upload");
                     foreach (var filePath in filesToUpload)
                     {
                         var uploadResult = await client.UploadFileAsync(

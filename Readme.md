@@ -85,3 +85,11 @@ docker run --env "DATASHARECLIENT_Mode=download" --env "DATASHARECLIENT_Host=$(i
 ```
 
 ## Advantages and Disadvantages  
+Advantages:  
+- easy to develop new functionality  
+- easy to deploy  
+Disadvantages:  
+- it would be better to transfer files with chunks  
+- currently files are stored directly to directory. It could be problem especially if server is runned under OS Windows which has some limitations on file names. It would be better to use something like MongoDB GridFS  
+- error handling should be improved  
+- no tests  
