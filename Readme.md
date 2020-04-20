@@ -53,7 +53,7 @@ Start:
 ```sh
 docker-compose up -d
 ```
-it start `test-server` and `test-client` containers. `test-client` starts in upload mode. It uploads files from directory `./Client/files/upload` and stopps work.  
+it starts `test-server` and `test-client` containers. `test-client` starts in upload mode. It uploads files from directory `./Client/files/upload` and stopps work.  
 To check that upload was successfully you can check logs:  
 ```sh
 docker logs test-client
